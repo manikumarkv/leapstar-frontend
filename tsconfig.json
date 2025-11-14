@@ -1,16 +1,66 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "noEmit": false,
-    "types": ["node", "jest"],
-    "composite": true,
+    // Target modern browsers
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "allowJs": false,
+    
+    // Bundler mode for Vite
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    
+    // JSX Configuration for React
+    "jsx": "react-jsx",
+    
+    // Strict Type-Checking Options (adjusted for existing codebase)
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "useUnknownInCatchVariables": true,
+    // Commented out to avoid breaking existing code - enable gradually
+    // "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    // "noUncheckedIndexedAccess": true, // Enable this gradually
+    
+    // Module Resolution
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": false,
+    "forceConsistentCasingInFileNames": true,
+    
+    // Type definitions
+    "types": ["vite/client", "node", "jest"],
+    
+    // Path Mapping
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    
+    // Build output (for tsc build command)
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "composite": true
   },
-  // Only include application source for project build. Test and config files excluded.
-  "include": ["src"],
-  "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.test.tsx", "**/*.stories.tsx"]
+  // Include source files for development
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts",
+    "vite-env.d.ts"
+  ],
+  // Exclude build artifacts and dependencies
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.stories.tsx"
+  ]
 }
