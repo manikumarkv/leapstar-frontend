@@ -34,9 +34,6 @@
     "esModuleInterop": false,
     "forceConsistentCasingInFileNames": true,
     
-    // Type definitions
-    "types": ["vite/client"],
-    
     // Path Mapping
     "baseUrl": ".",
     "paths": {
