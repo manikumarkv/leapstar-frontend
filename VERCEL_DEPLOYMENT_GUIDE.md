@@ -36,13 +36,15 @@ vercel --prod
 #### 🔄 **SPA Routing**
 ```json
 {
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    {
+      "source": "/((?!api).*)",
+      "destination": "/index.html"
+    }
   ]
 }
 ```
-This ensures all routes (`/admin`, `/student`, `/parent`, etc.) are handled by React Router.
+This ensures all routes (`/admin`, `/student`, `/parent`, etc.) are handled by React Router, while preserving any `/api` routes for potential future use.
 
 #### 🚀 **Performance Optimization**
 - **Static Assets**: Long-term caching (1 year) for immutable assets
