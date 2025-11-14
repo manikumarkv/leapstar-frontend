@@ -35,7 +35,7 @@
     "forceConsistentCasingInFileNames": true,
     
     // Type definitions
-    "types": ["vite/client", "node", "jest"],
+    "types": ["vite/client"],
     
     // Path Mapping
     "baseUrl": ".",
